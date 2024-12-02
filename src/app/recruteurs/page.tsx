@@ -1,3 +1,10 @@
+import StudentsTable from "../components/StudentsTable";
+
 export default function Page() {
-  return <p>Page recruteurs</p>;
+  return (
+    <>
+      <h1>Page recruteurs</h1>
+      <StudentsTable />
+    </>
+  );
 }

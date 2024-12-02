@@ -1,5 +1,5 @@
 import Link from "next/link";
-import StudentForm from "../component/Studentform";
+import StudentForm from "../components/Studentform";
 
 export default function Page() {
   return (
