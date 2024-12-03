@@ -1,48 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { IStudent } from "../@types/student";
+import { thunkFetchStudents } from "@/store/ThunkFetchStudents";
 
-const { Column } = Table;
-
-interface DataType {
-  key: React.Key;
-  firstName: string;
-  lastName: string;
-  age: number;
-  birthDate: string;
-  email: string;
-}
-
-const data: DataType[] = [
-  {
-    key: "1",
-    firstName: "John",
-    lastName: "Brown",
-    age: 32,
-    birthDate: "2003-04-18",
-    email: "plop@gmail.com",
-  },
-  {
-    key: "2",
-    firstName: "Jim",
-    lastName: "Green",
-    age: 42,
-    birthDate: "2003-04-18",
-    email: "plop@gmail.com",
-  },
-  {
-    key: "3",
-    firstName: "Joe",
-    lastName: "Black",
-    age: 32,
-    birthDate: "2003-04-18",
-    email: "plop@gmail.com",
-  },
-];
-
-const columns: ColumnsType<DataType> = [
+const columns: ColumnsType = [
   {
     title: "Nom",
     dataIndex: "firstName",
@@ -99,11 +64,18 @@ const columns: ColumnsType<DataType> = [
 ];
 
 export default function StudentsTable() {
+  const dispatch = useAppDispatch();
+  const { students } = useAppSelector((state) => state.studentsReducer);
+
+  useEffect(() => {
+    dispatch(thunkFetchStudents());
+  }, []);
+
   return (
     <div>
-      <Table<DataType>
+      <Table
         columns={columns}
-        dataSource={data}
+        dataSource={students}
         pagination={{
           showSizeChanger: false,
           showQuickJumper: true,
