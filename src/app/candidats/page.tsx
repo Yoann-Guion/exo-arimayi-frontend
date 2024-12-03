@@ -2,6 +2,9 @@ import Link from "next/link";
 import StudentForm from "../components/Studentform";
 
 export default function Page() {
+  const today = new Date();
+  console.log(today);
+
   return (
     <div className="flex flex-col items-center p-6">
       <div className="w-4/6 p-8 bg-white shadow-md rounded-lg text-center">
