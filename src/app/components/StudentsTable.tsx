@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { IStudent } from "../@types/student";
 import { thunkFetchStudents } from "@/store/ThunkFetchStudents";
 
-const columns: ColumnsType = [
+const columns: ColumnsType<IStudent> = [
   {
     title: "Nom",
     dataIndex: "firstName",
@@ -55,13 +55,20 @@ const columns: ColumnsType = [
   {
     title: "Détails",
     key: "action",
-    render: () => (
-      <button className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition-colors">
+    render: (_, record) => (
+      <button
+        className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition-colors"
+        onClick={() => handleDetails(record)}
+      >
         Voir
       </button>
     ),
   },
 ];
+
+const handleDetails = (record: IStudent) => {
+  console.log("Détails de l'étudiant :", record);
+};
 
 export default function StudentsTable() {
   const dispatch = useAppDispatch();
@@ -76,6 +83,7 @@ export default function StudentsTable() {
       <Table
         columns={columns}
         dataSource={students}
+        rowKey="id"
         pagination={{
           showSizeChanger: false,
           showQuickJumper: true,
