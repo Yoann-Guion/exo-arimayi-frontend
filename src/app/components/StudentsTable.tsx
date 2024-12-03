@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import { Space, Table, Tag } from "antd";
+import { Table } from "antd";
+import type { ColumnsType } from "antd/es/table";
 
-const { Column, ColumnGroup } = Table;
+const { Column } = Table;
 
 interface DataType {
   key: React.Key;
@@ -79,18 +80,14 @@ const columns: ColumnsType<DataType> = [
 export default function StudentsTable() {
   return (
     <div>
-      <Table<DataType> dataSource={data}>
-        <Column title="Nom" dataIndex="firstName" key="firstName" />
-        <Column title="Prénom" dataIndex="lastName" key="lastName" />
-        <Column title="Âge" dataIndex="age" key="age" />
-        <Column
-          title="Date de naissance"
-          dataIndex="birthDate"
-          key="birthdate"
-        />
-        <Column title="e-mail" dataIndex="email" key="email" />
-        <Column title="Détails" key="action" />
-      </Table>
+      <Table<DataType>
+        columns={columns}
+        dataSource={data}
+        pagination={{
+          showSizeChanger: true,
+          showQuickJumper: true,
+        }}
+      />
     </div>
   );
 }
