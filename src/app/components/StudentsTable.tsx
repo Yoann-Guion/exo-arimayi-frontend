@@ -11,7 +11,7 @@ interface DataType {
   firstName: string;
   lastName: string;
   age: number;
-  // birthDate: Date;
+  // birthDate: Date
 }
 
 const data: DataType[] = [
@@ -84,7 +84,7 @@ export default function StudentsTable() {
         columns={columns}
         dataSource={data}
         pagination={{
-          showSizeChanger: true,
+          showSizeChanger: false,
           showQuickJumper: true,
         }}
       />
