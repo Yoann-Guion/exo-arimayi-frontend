@@ -6,6 +6,8 @@ import type { ColumnsType } from "antd/es/table";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { IStudent } from "../@types/student";
 import { thunkFetchStudents } from "@/store/ThunkFetchStudents";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const columns: ColumnsType<IStudent> = [
   {
@@ -56,18 +58,21 @@ const columns: ColumnsType<IStudent> = [
     title: "Détails",
     key: "action",
     render: (_, record) => (
-      <button
-        className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition-colors"
-        onClick={() => handleDetails(record)}
-      >
-        Voir
-      </button>
+      <Link href={`/recruteurs/${record.id}`}>
+        <button
+          className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition-colors"
+          onClick={() => handleDetails(record)}
+        >
+          Voir
+        </button>
+      </Link>
     ),
   },
 ];
 
 const handleDetails = (record: IStudent) => {
-  console.log("Détails de l'étudiant :", record);
+  const router = useRouter();
+  // router.push(`/recruteurs/${record.lastName}`);
 };
 
 export default function StudentsTable() {
