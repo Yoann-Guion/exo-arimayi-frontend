@@ -1,6 +1,9 @@
 {
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "title": "Projet frontend",
+    "candidates-link": "/candidats",
+    "candidates": "Espace candidats",
+    "recruiters-link": "/recruteurs",
+    "recruiters": "Espace recruteurs"
   }
 }

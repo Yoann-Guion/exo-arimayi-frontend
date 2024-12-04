@@ -1,6 +1,29 @@
 {
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "title": "Frontend project",
+    "candidates-link": "/candidates",
+    "candidates": "Candidates area",
+    "recruiters-link": "/recruiters",
+    "recruiters": "Recruiters area"
+  },
+  "CandidatesPage": {
+    "title": "Candidates area",
+    "backButton": "Back"
+  },
+  "CandidatesForm": {
+    "firstName": "First name",
+    "LastName": "Last name",
+    "BirthDate": "Birth date",
+    "Email": "Email",
+    "major": "Major"
+  },
+  "RecruitersPage": {
+    "title": "Recruiters page",
+    "backButton": "Back"
+  },
+  "StudentsDetailsPage": {
+    "title": "Student details",
+    "students": "Students",
+    "recruiters": "Recruiters"
   }
 }
