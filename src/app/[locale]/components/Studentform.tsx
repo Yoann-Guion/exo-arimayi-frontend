@@ -2,20 +2,20 @@
 
 import React from "react";
 import { Form, Input, Button, DatePicker } from "antd";
+import { useTranslations } from "next-intl";
 
 export default function StudentForm() {
   const [form] = Form.useForm();
+  const t = useTranslations("CandidatesFormAndTable");
 
   const onFinish = (values: any) => {
-    // Conversion de la date de naissance en format ISO
+    // Convert the date to ISO format
     const formattedValues = {
       ...values,
       birthDate: values.birthDate
         ? values.birthDate.format("YYYY-MM-DD")
         : null,
     };
-    console.log("Données du formulaire :", formattedValues);
-    // Ici, vous pourriez envoyer les données à votre backend
   };
 
   return (
@@ -34,55 +34,55 @@ export default function StudentForm() {
       >
         <Form.Item
           name="firstName"
-          label="Prénom"
+          label={t("firstName")}
           rules={[{ required: true, message: "Veuillez saisir le prénom" }]}
         >
-          <Input placeholder="Entrez le prénom" />
+          <Input placeholder={t("firstNamePlaceholder")} />
         </Form.Item>
 
         <Form.Item
           name="lastName"
-          label="Nom"
+          label={t("lastName")}
           rules={[{ required: true, message: "Veuillez saisir le nom" }]}
         >
-          <Input placeholder="Entrez le nom" />
+          <Input placeholder={t("lastNamePlaceholder")} />
         </Form.Item>
 
         <Form.Item
           name="birthDate"
-          label="Date de naissance"
+          label={t("birthDate")}
           rules={[
             { required: true, message: "Veuillez sélectionner une date" },
           ]}
         >
           <DatePicker
             style={{ width: "100%" }}
-            placeholder="Sélectionnez une date"
+            placeholder={t("birthDatePlaceholder")}
           />
         </Form.Item>
 
         <Form.Item
           name="email"
-          label="Email"
+          label={t("email")}
           rules={[
             { required: true, message: "Veuillez saisir l'email" },
             { type: "email", message: "Veuillez entrer un email valide" },
           ]}
         >
-          <Input placeholder="Entrez l'email" />
+          <Input placeholder={t("emailPlaceholder")} />
         </Form.Item>
 
         <Form.Item
           name="major"
-          label="Filière"
+          label={t("major")}
           rules={[{ required: true, message: "Veuillez saisir la filière" }]}
         >
-          <Input placeholder="Entrez la filière" />
+          <Input placeholder={t("majorPlaceholder")} />
         </Form.Item>
 
         <Form.Item>
           <Button type="primary" htmlType="submit" block>
-            Enregistrer l'étudiant
+            {t("submitButton")}
           </Button>
         </Form.Item>
       </Form>

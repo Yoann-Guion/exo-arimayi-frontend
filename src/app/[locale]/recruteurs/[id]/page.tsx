@@ -3,7 +3,7 @@
 import { IStudent } from "@/app/@types/student";
 import { useAppSelector } from "@/store/hooks";
 import { Card } from "antd";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { useParams } from "next/navigation";
 
 export default function Page() {

@@ -6,78 +6,68 @@ import type { ColumnsType } from "antd/es/table";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { IStudent } from "../../@types/student";
 import { thunkFetchStudents } from "@/store/ThunkFetchStudents";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
-
-const columns: ColumnsType<IStudent> = [
-  {
-    title: "Nom",
-    dataIndex: "firstName",
-    key: "firstName",
-    className: "text-gray-700 font-medium w-1/4 min-width-40",
-  },
-  {
-    title: "Prénom",
-    dataIndex: "lastName",
-    key: "lastName",
-    className: "text-gray-700 font-medium",
-  },
-  {
-    title: "Âge",
-    dataIndex: "age",
-    key: "age",
-    className: "text-center",
-  },
-  {
-    title: "Date de naissance",
-    dataIndex: "birthDate",
-    key: "birthdate",
-    className: "overflow-clip",
-    render: (birthDate: Date | string | undefined) => {
-      if (!birthDate) return "Non indiquée";
-
-      // Convertir en objet Date si ce n'est pas déjà le cas
-      const dateObj =
-        birthDate instanceof Date ? birthDate : new Date(birthDate);
-
-      // Formater la date avec toLocaleDateString et des options personnalisées
-      return dateObj.toLocaleDateString("fr-FR", {
-        day: "2-digit",
-        month: "long",
-        year: "numeric",
-      });
-    },
-  },
-  {
-    title: "E-mail",
-    dataIndex: "email",
-    key: "email",
-    className: "text-blue-600",
-  },
-  {
-    title: "Détails",
-    key: "action",
-    render: (_, record) => (
-      <Link href={`/recruteurs/${record.id}`}>
-        <button
-          className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition-colors"
-          // onClick={() => handleDetails(record)}
-        >
-          Voir
-        </button>
-      </Link>
-    ),
-  },
-];
-
-// const handleDetails = (record: IStudent) => {
-//   const router = useRouter();
-//   // router.push(`/recruteurs/${record.lastName}`);
-// };
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 export default function StudentsTable() {
   const dispatch = useAppDispatch();
   const { students } = useAppSelector((state) => state.studentsReducer);
+  const t = useTranslations("CandidatesFormAndTable");
+
+  const columns: ColumnsType<IStudent> = [
+    {
+      title: t("lastName"),
+      dataIndex: "lastName",
+      key: "lastname",
+      className: "text-gray-700 font-medium",
+    },
+    {
+      title: t("firstName"),
+      dataIndex: "firstName",
+      key: "firstname",
+      className: "text-gray-700 font-medium",
+    },
+    {
+      // todo : calculer l'age a partir de la date de naissance
+      title: t("age"),
+      dataIndex: "age",
+      key: "age",
+      className: "text-center",
+    },
+    {
+      title: t("birthDate"),
+      dataIndex: "birthDate",
+      key: "birthdate",
+      className: "overflow-clip",
+      render: (birthDate: Date | string | undefined) => {
+        if (!birthDate) return "Non indiquée";
+
+        // Convert the birth date to a Date object
+        const dateObj =
+          birthDate instanceof Date ? birthDate : new Date(birthDate);
+
+        // Format the date as a string
+        return dateObj.toLocaleDateString();
+      },
+    },
+    {
+      title: t("email"),
+      dataIndex: "email",
+      key: "email",
+      className: "text-blue-600",
+    },
+    {
+      title: t("details"),
+      key: "action",
+      render: (_, record) => (
+        <Link href={`/recruteurs/${record.id}`}>
+          <button className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition-colors">
+            {t("detailsButton")}
+          </button>
+        </Link>
+      ),
+    },
+  ];
 
   useEffect(() => {
     dispatch(thunkFetchStudents());

@@ -10,12 +10,21 @@
     "title": "Candidates area",
     "backButton": "Back"
   },
-  "CandidatesForm": {
+  "CandidatesFormAndTable": {
     "firstName": "First name",
-    "LastName": "Last name",
-    "BirthDate": "Birth date",
-    "Email": "Email",
-    "major": "Major"
+    "firstNamePlaceholder": "Please enter your first name",
+    "lastName": "Last name",
+    "lastNamePlaceholder": "Please enter your last name",
+    "birthDate": "Birth date",
+    "birthDatePlaceholder": "Please select your birth date",
+    "age": "Age",
+    "email": "Email",
+    "emailPlaceholder": "Please enter your email",
+    "major": "Major",
+    "majorPlaceholder": "Please enter your major",
+    "submitButton": "Save candidate",
+    "details": "Details",
+    "detailsButton": "See"
   },
   "RecruitersPage": {
     "title": "Recruiters page",
