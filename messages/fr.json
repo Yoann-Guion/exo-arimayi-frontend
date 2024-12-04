@@ -24,11 +24,12 @@
     "majorPlaceholder": "Veuillez renseigner votre filière",
     "submitButton": "Enregistrer le candidat",
     "details": "Détails",
-    "detailsButton": "Voir"
+    "detailsButton": "Voir",
+    "candidateNotFound": "Aucun étudiant trouvé",
+    "candidateNotFoundMessage": "Aucun étudiant ne correspond à votre recherche"
   },
   "RecruitersPage": {
     "title": "Espace recruteurs",
     "backButton": "Retour"
-  },
-  "StudentsTable": {}
+  }
 }
