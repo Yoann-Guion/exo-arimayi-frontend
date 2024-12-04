@@ -11,6 +11,7 @@
     "backButton": "Back"
   },
   "CandidatesFormAndTable": {
+  "CandidatesFormAndTable": {
     "firstName": "First name",
     "firstNamePlaceholder": "Please enter your first name",
     "lastName": "Last name",
