@@ -5,5 +5,31 @@
     "candidates": "Espace candidats",
     "recruiters-link": "/recruteurs",
     "recruiters": "Espace recruteurs"
+  },
+  "CandidatesPage": {
+    "title": "Espace candidats",
+    "backButton": "Retour"
+  },
+  "CandidatesFormAndTable": {
+    "firstName": "Prénom",
+    "firstNamePlaceholder": "Veuillez saisir votre prénom",
+    "lastName": "Nom",
+    "lastNamePlaceholder": "Veuillez saisir votre nom",
+    "birthDate": "Date de naissance",
+    "birthDatePlaceholder": "Veuillez saisir votre date d'anniversaire",
+    "age": "Âge",
+    "email": "Email",
+    "emailPlaceholder": "Veuillez saisir votre adresse email",
+    "major": "Filière",
+    "majorPlaceholder": "Veuillez renseigner votre filière",
+    "submitButton": "Enregistrer le candidat",
+    "details": "Détails",
+    "detailsButton": "Voir",
+    "candidateNotFound": "Aucun étudiant trouvé",
+    "candidateNotFoundMessage": "Aucun étudiant ne correspond à votre recherche"
+  },
+  "RecruitersPage": {
+    "title": "Espace recruteurs",
+    "backButton": "Retour"
   }
 }
