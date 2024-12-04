@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { IStudent } from "../@types/student";
+import { IStudent } from "../../@types/student";
 import { thunkFetchStudents } from "@/store/ThunkFetchStudents";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
