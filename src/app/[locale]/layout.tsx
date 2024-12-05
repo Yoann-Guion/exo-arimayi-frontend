@@ -6,8 +6,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { setRequestLocale } from "next-intl/server";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
