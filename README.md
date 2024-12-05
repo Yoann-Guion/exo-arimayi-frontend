@@ -1,4 +1,4 @@
-# AriMAyo exercice Frontend
+# AriMayi exercice Frontend
 
 ## Exercice d'entrainement
 
@@ -31,11 +31,12 @@ Assurez-vous d'avoir installé les outils suivants sur votre machine :
 
 1. Clonez ce dépôt sur votre machine :
    ```bash
-   git clone <url-du-depot>
+   git clone git@github.com:Yoann-Guion/exo-arimayi-frontend.git         // SSH
+   git clone https://github.com/Yoann-Guion/exo-arimayi-frontend.git     // HTTPS
    ```
 2. Naviguez dans le dossier du projet :
    ```bash
-   cd <nom-du-dossier>
+   cd exo-arimayi-frontend
    ```
 3. Installez les dépendances :
    ```bash
