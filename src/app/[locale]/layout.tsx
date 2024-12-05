@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { setRequestLocale } from "next-intl/server";
 
 const geistSans = localFont({
@@ -49,9 +50,11 @@ export default async function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
+          <AntdRegistry>
+            <NextIntlClientProvider messages={messages}>
+              {children}
+            </NextIntlClientProvider>
+          </AntdRegistry>
         </body>
       </html>
     </StoreProvider>

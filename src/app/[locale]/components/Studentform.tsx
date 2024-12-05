@@ -35,7 +35,7 @@ export default function StudentForm() {
         <Form.Item
           name="firstName"
           label={t("firstName")}
-          rules={[{ required: true, message: "Veuillez saisir le prénom" }]}
+          rules={[{ required: true, message: t("inputRequired") }]}
         >
           <Input placeholder={t("firstNamePlaceholder")} />
         </Form.Item>
@@ -43,7 +43,7 @@ export default function StudentForm() {
         <Form.Item
           name="lastName"
           label={t("lastName")}
-          rules={[{ required: true, message: "Veuillez saisir le nom" }]}
+          rules={[{ required: true, message: t("inputRequired") }]}
         >
           <Input placeholder={t("lastNamePlaceholder")} />
         </Form.Item>
@@ -51,9 +51,7 @@ export default function StudentForm() {
         <Form.Item
           name="birthDate"
           label={t("birthDate")}
-          rules={[
-            { required: true, message: "Veuillez sélectionner une date" },
-          ]}
+          rules={[{ required: true, message: t("inputRequired") }]}
         >
           <DatePicker
             style={{ width: "100%" }}
@@ -65,8 +63,8 @@ export default function StudentForm() {
           name="email"
           label={t("email")}
           rules={[
-            { required: true, message: "Veuillez saisir l'email" },
-            { type: "email", message: "Veuillez entrer un email valide" },
+            { required: true, message: t("inputRequired") },
+            { type: "email", message: t("emailValidate") },
           ]}
         >
           <Input placeholder={t("emailPlaceholder")} />
@@ -75,7 +73,7 @@ export default function StudentForm() {
         <Form.Item
           name="major"
           label={t("major")}
-          rules={[{ required: true, message: "Veuillez saisir la filière" }]}
+          rules={[{ required: true, message: t("inputRequired") }]}
         >
           <Input placeholder={t("majorPlaceholder")} />
         </Form.Item>
