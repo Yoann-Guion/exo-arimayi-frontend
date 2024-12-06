@@ -19,13 +19,7 @@ export default function StudentForm() {
   };
 
   return (
-    <div
-      style={{
-        maxWidth: "500px",
-        margin: "0 auto",
-        padding: "20px",
-      }}
-    >
+    <div className="w-full max-w-md mx-auto px-4 sm:px-6">
       <Form
         form={form}
         name="student-registration"
