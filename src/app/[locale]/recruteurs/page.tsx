@@ -2,7 +2,7 @@ import { Link } from "@/i18n/routing";
 import StudentsTable from "../components/StudentsTable";
 import { useTranslations } from "next-intl";
 
-export default function Page() {
+export default function Page({ params }: { params: { locale?: string } }) {
   const t = useTranslations("RecruitersPage");
   return (
     <div className="flex flex-col items-center p-6">
@@ -17,7 +17,7 @@ export default function Page() {
 
         <div className="w-full p-6 ">
           <div className="bg-white shadow-md rounded-lg overflow-hidden w-full md:w-4/5 lg:w-3/4 mx-auto">
-            <StudentsTable />
+            <StudentsTable params={params} />
           </div>
         </div>
       </div>

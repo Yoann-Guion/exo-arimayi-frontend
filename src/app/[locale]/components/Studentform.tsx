@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Form, Input, Button, DatePicker } from "antd";
 import { useTranslations } from "next-intl";
 
