@@ -17,7 +17,7 @@ export default function Page({ params }: { params: { locale?: string } }) {
 
         <div className="w-full p-6 ">
           <div className="bg-white shadow-md rounded-lg overflow-hidden w-full md:w-4/5 lg:w-3/4 mx-auto">
-            <StudentsTable params={params} />
+            <StudentsTable />
           </div>
         </div>
       </div>
