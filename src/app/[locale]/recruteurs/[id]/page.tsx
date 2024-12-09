@@ -2,7 +2,7 @@
 
 import { IStudent } from "@/app/@types/student";
 import { useAppSelector } from "@/store/hooks";
-import { Card } from "antd";
+import { Button, Card } from "antd";
 import { Link } from "@/i18n/routing";
 import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
@@ -17,9 +17,9 @@ export default function Page() {
     <div className="flex flex-col items-center p-6">
       <div className="w-4/6 p-8 bg-white shadow-md rounded-lg text-center relative">
         <Link href="/recruteurs">
-          <button className="absolute top-4 left-4 px-4 py-2 bg-gray-200 text-gray-800 border border-gray-400 rounded hover:bg-gray-300 focus:outline-none focus:ring">
+          <Button className="absolute top-4 left-4 px-4 py-2 bg-gray-200 text-gray-800 border border-gray-400 rounded hover:bg-gray-300 focus:outline-none focus:ring">
             Retour
-          </button>
+          </Button>
         </Link>
 
         {student ? (
