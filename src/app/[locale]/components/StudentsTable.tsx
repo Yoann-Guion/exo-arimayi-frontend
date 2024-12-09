@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { Table } from "antd";
+import { Button, Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { IStudent } from "../../@types/student";
@@ -61,9 +61,9 @@ export default function StudentsTable() {
       key: "action",
       render: (_, record) => (
         <Link href={`/recruteurs/${record.id}`}>
-          <button className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition-colors">
+          <Button className="text-white px-3 py-1 rounded-md hover:bg-blue-600 transition-colors">
             {t("detailsButton")}
-          </button>
+          </Button>
         </Link>
       ),
     },
